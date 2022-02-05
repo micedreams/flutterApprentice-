@@ -10,12 +10,18 @@ class RecipesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const title = "Recipe Calculator";
+    ThemeData theme = ThemeData();
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
+      title: title,
+      debugShowCheckedModeBanner: false,
+      theme: theme.copyWith(
+        colorScheme: theme.colorScheme.copyWith(
+          primary: Colors.grey,
+          secondary: Colors.black,
+        ),
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: title),
     );
   }
 }
