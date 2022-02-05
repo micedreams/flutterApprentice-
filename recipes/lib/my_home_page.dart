@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipes/recipe.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -17,9 +18,13 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: SafeArea(
-        // TODO: Replace child: Container()
-        child: Container(),
-      ),
+          child: ListView.builder(
+        itemCount: Recipe.samples.length,
+        itemBuilder: (BuildContext context, int index) {
+          // TODO: Update to return Recipe card
+          return Text(Recipe.samples[index].label);
+        },
+      )),
     );
   }
   // TODO: Add buildRecipeCard() here
