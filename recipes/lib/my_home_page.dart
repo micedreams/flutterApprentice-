@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recipes/recipe.dart';
+import 'package:recipes/recipe_detail.dart';
+import 'package:recipes/samples.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -19,9 +21,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: SafeArea(
           child: ListView.builder(
-        itemCount: Recipe.samples.length,
+        itemCount: Sample.samples.length,
         itemBuilder: (BuildContext context, int index) {
-          return buildRecipeCard(Recipe.samples[index]);
+          return buildRecipeCard(Sample.samples[index]);
         },
       )),
     );
@@ -34,8 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
           context,
           MaterialPageRoute(
             builder: (context) {
-              // TODO: Replace return with return RecipeDetail()
-              return Text('Detail page');
+              return RecipeDetail(recipe: recipe);
             },
           ),
         );
